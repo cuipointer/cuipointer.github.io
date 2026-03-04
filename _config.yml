@@ -11,7 +11,9 @@ keywords:
   - Hexo
   - GitHub Pages
 author: Cuihan
-language: zh-CN
+language:
+  - zh-CN
+  - en
 timezone: 'Asia/Shanghai'
 
 # URL
