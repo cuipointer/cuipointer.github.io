@@ -11,6 +11,57 @@ if (!!$.prototype.justifiedGallery) {
 }
 
 $(document).ready(function() {
+  var themeStyleLink = document.getElementById("theme-style");
+  var themeToggle = $("#theme-toggle");
+  var themeToggleIcon = $("#theme-toggle-icon");
+
+  function setThemeIcon(theme) {
+    if (!themeToggleIcon.length) {
+      return;
+    }
+
+    themeToggleIcon.removeClass("fa-moon fa-sun");
+    if (theme === "dark") {
+      themeToggleIcon.addClass("fa-sun");
+      themeToggle.attr("aria-label", "Switch to white theme");
+    } else {
+      themeToggleIcon.addClass("fa-moon");
+      themeToggle.attr("aria-label", "Switch to dark theme");
+    }
+  }
+
+  function applyTheme(theme) {
+    if (!themeStyleLink) {
+      return;
+    }
+
+    var normalizedTheme = theme === "dark" ? "dark" : "white";
+    var targetHref = normalizedTheme === "dark"
+      ? themeStyleLink.getAttribute("data-dark")
+      : themeStyleLink.getAttribute("data-white");
+
+    if (targetHref) {
+      themeStyleLink.setAttribute("href", targetHref);
+    }
+
+    document.documentElement.setAttribute("data-theme", normalizedTheme);
+    setThemeIcon(normalizedTheme);
+
+    try {
+      localStorage.setItem("cactus-theme", normalizedTheme);
+    } catch (error) {}
+  }
+
+  if (themeStyleLink) {
+    var initialTheme = document.documentElement.getAttribute("data-theme") || "white";
+    applyTheme(initialTheme);
+  }
+
+  themeToggle.on("click", function(event) {
+    event.preventDefault();
+    var currentTheme = document.documentElement.getAttribute("data-theme") || "white";
+    applyTheme(currentTheme === "dark" ? "white" : "dark");
+  });
 
   /**
    * Shows the responsive navigation menu on mobile.
@@ -111,3 +162,4 @@ $(document).ready(function() {
     }
   }
 });
+
