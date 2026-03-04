@@ -1,4 +1,42 @@
-# Hexo 博客 GitHub Pages 完整配置指南
+## 修复进度总结
+
+### ✅ 已完成的步骤
+
+- [x] **修复部署仓库配置**
+  ```yaml
+  # _config.yml 中的 deploy 部分
+  deploy:
+    type: git
+    repo: git@github.com:cuipointer/cuipointer.github.io.git
+    branch: main
+  ```
+
+- [x] **修复 URL 路径配置**
+  ```yaml
+  # _config.yml 中的 URL 部分
+  url: https://cuipointer.github.io/
+  root: /
+  ```
+
+- [x] **完整构建与部署**
+  ```bash
+  npm run clean && npm run build && npm run deploy
+  # ✓ 75 文件生成成功
+  # ✓ 推送到 cuipointer.github.io 成功
+  ```
+
+- [x] **源代码推送**
+  ```bash
+  git push origin main  # 推送到 cuihan 仓库
+  ```
+
+### 🔄 正在进行的步骤（你需要手动完成）
+
+- [ ] **在 GitHub 网页端启用 Pages**（见上章第四步）
+
+---
+
+
 
 ## 问题诊断与修复
 
@@ -17,7 +55,43 @@ deploy:
 
 ## 修复方案
 
-### 第一步：修正部署配置文件
+## 第四步：GitHub Pages 网页配置（必须做）
+
+### 📌 重要：在 GitHub 网页端启用 Pages
+
+即使已推送静态文件，仍需在 GitHub 仓库设置中手动启用 Pages：
+
+1. **打开仓库设置**
+   - 访问：https://github.com/cuipointer/cuipointer.github.io/settings
+   - 如果无权限，确认是否为仓库所有者
+
+2. **配置 GitHub Pages**
+   - 左侧菜单 → `Pages`
+   - **Build and deployment** 部分：
+     - **Source** = `Deploy from a branch`
+     - **Branch** = `main` → `(root)` 
+     - 点击 `Save`
+
+3. **检查部署状态**
+   - 页面顶部会显示部署进度
+   - 绿色勾号 ✅ = 部署成功
+   - 可能需要等待 1-3 分钟
+
+4. **验证访问**  
+   ```
+   https://cuipointer.github.io/
+   ```
+   
+### 常见问题排查
+
+| 症状 | 原因 | 解决方案 |
+|------|------|--------|
+| 显示 404 Not Found | Pages 未启用或配置错误 | 检查 Settings → Pages 配置 |
+| 显示 "Site not found" | 仓库未设置为公开，或无 source 分支 | 设置仓库为 Public，确保 main 分支存在并有文件 |
+| 部署中（进度条） | GitHub 正在生成静态页面 | 等待 2-5 分钟后刷新 |
+| CNAME 错误 | 自定义域名配置冲突 | 清空 CNAME 文件或正确配置域名 |
+
+
 
 编辑 `_config.yml`，找到 `deploy` 部分：
 
