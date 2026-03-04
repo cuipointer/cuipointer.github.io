@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+  <html lang=&#34;en&#34;>
+    <head>
+  <!-- so meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+  <meta name="description" content="End-to-end guide for building and deploying a personal blog with Hexo, Cactus, and GitHub Pages.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Complete Guide: Build a Blog with Hexo + GitHub Pages">
+<meta property="og:url" content="https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/index.html">
+<meta property="og:site_name" content="Cuihan&#39;s Blog">
+<meta property="og:description" content="End-to-end guide for building and deploying a personal blog with Hexo, Cactus, and GitHub Pages.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-04T17:12:00.000Z">
+<meta property="article:modified_time" content="2026-03-04T16:59:33.754Z">
+<meta property="article:author" content="Cuihan">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="GitHub Pages">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Tutorial">
+<meta name="twitter:card" content="summary">
+    
+      
+        
+          
+                    <link rel="shortcut icon" href="/images/favicon.ico">
+                    
+                      
+                        
+                          
+                                    <link rel="icon" type="image/png" href="/images/favicon-192x192.png"
+                                      sizes="192x192">
+                                    
+                                      
+                                        
+                                          
+                                                    <link rel="apple-touch-icon" sizes="180x180"
+                                                      href="/images/apple-touch-icon.png">
+                                                    
+                                                      
+                                                        
+                                                          <!-- title -->
+                                                          <title>
+                                                            Complete Guide: Build a Blog with Hexo + GitHub Pages
+                                                          </title>
+                                                          <!-- async scripts -->
+                                                          <!-- Google Analytics -->
+
+
+                                                            <!-- Umami Analytics -->
+
+
+                                                              <!-- styles -->
+                                                              <script>
+                                                                (function () {
+                                                                  var theme = 'white';
+                                                                  try {
+                                                                    var saved = localStorage.getItem('cactus-theme');
+                                                                    if (saved === 'dark' || saved === 'white') {
+                                                                      theme = saved;
+                                                                    }
+                                                                  } catch (error) { }
+                                                                  document.documentElement.setAttribute('data-theme', theme);
+                                                                })();
+                                                              </script>
+                                                              <link id="theme-style" rel="stylesheet"
+                                                                href="/css/style-white.css"
+                                                                data-white="/css/style-white.css"
+                                                                data-dark="/css/style-dark.css" />
+                                                              <script>
+                                                                (function () {
+                                                                  var theme = document.documentElement.getAttribute('data-theme') || 'white';
+                                                                  var themeStyle = document.getElementById('theme-style');
+                                                                  if (themeStyle && theme === 'dark') {
+                                                                    themeStyle.href = themeStyle.getAttribute('data-dark');
+                                                                  }
+                                                                })();
+                                                              </script>
+                                                              <!-- persian styles -->
+                                                              
+                                                                    <!-- rss -->
+                                                                    
+                                                                          
+                                                                              <!-- mathjax -->
+                                                                              
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+      <body class="max-width mx-auto px3 ltr">
+        
+          <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/cuipointer">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2026/03/04/hello-world/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&text=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&title=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&is_video=false&description=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Complete Guide: Build a Blog with Hexo + GitHub Pages&body=Check out this article: https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&title=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&title=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&title=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&title=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&name=Complete Guide: Build a Blog with Hexo + GitHub Pages&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&t=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Prepare-environment"><span class="toc-number">2.</span> <span class="toc-text">1) Prepare environment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Initialize-Hexo-project"><span class="toc-number">3.</span> <span class="toc-text">2) Initialize Hexo project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Install-and-configure-Cactus"><span class="toc-number">4.</span> <span class="toc-text">3) Install and configure Cactus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Configure-deployment"><span class="toc-number">5.</span> <span class="toc-text">4) Configure deployment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Write-and-preview"><span class="toc-number">6.</span> <span class="toc-text">5) Write and preview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Build-and-deploy"><span class="toc-number">7.</span> <span class="toc-text">6) Build and deploy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Practical-tips"><span class="toc-number">8.</span> <span class="toc-text">Practical tips</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+            
+              <div class="content index py4 ">
+                
+                      <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        Complete Guide: Build a Blog with Hexo + GitHub Pages
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Cuihan</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2026-03-04T17:12:00.000Z" class="dt-published" itemprop="datePublished">2026-03-05</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/Tech-Tutorial/">Tech Tutorial</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/Blog/" rel="tag">Blog</a>, <a class="p-category" href="/tags/GitHub-Pages/" rel="tag">GitHub Pages</a>, <a class="p-category" href="/tags/Hexo/" rel="tag">Hexo</a>, <a class="p-category" href="/tags/Tutorial/" rel="tag">Tutorial</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p>This guide shows a reliable workflow for building a personal blog using <strong>Hexo + Cactus + GitHub Pages</strong>.</p>
+<h2 id="1-Prepare-environment"><a href="#1-Prepare-environment" class="headerlink" title="1) Prepare environment"></a>1) Prepare environment</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install Node.js with nvm</span></span><br><span class="line">curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash</span><br><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">&quot;<span class="variable">$HOME</span>/.nvm&quot;</span></span><br><span class="line">. <span class="string">&quot;<span class="variable">$NVM_DIR</span>/nvm.sh&quot;</span></span><br><span class="line">nvm install --lts</span><br><span class="line">nvm use --lts</span><br><span class="line"></span><br><span class="line"><span class="comment"># verify</span></span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Initialize-Hexo-project"><a href="#2-Initialize-Hexo-project" class="headerlink" title="2) Initialize Hexo project"></a>2) Initialize Hexo project</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> my-blog &amp;&amp; <span class="built_in">cd</span> my-blog</span><br><span class="line">npx hexo init .</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-Install-and-configure-Cactus"><a href="#3-Install-and-configure-Cactus" class="headerlink" title="3) Install and configure Cactus"></a>3) Install and configure Cactus</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/probberechts/hexo-theme-cactus.git cactus</span><br><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">cp</span> themes/cactus/_config.yml _config.cactus.yml</span><br></pre></td></tr></table></figure>
+
+<p>In <code>_config.yml</code>:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">cactus</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://yourname.github.io/</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-Configure-deployment"><a href="#4-Configure-deployment" class="headerlink" title="4) Configure deployment"></a>4) Configure deployment</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>In <code>_config.yml</code>:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:yourname/yourname.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-Write-and-preview"><a href="#5-Write-and-preview" class="headerlink" title="5) Write and preview"></a>5) Write and preview</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npx hexo new <span class="string">&quot;My first post&quot;</span></span><br><span class="line">npx hexo server</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-Build-and-deploy"><a href="#6-Build-and-deploy" class="headerlink" title="6) Build and deploy"></a>6) Build and deploy</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npx hexo clean</span><br><span class="line">npx hexo generate</span><br><span class="line">npx hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h2 id="Practical-tips"><a href="#Practical-tips" class="headerlink" title="Practical tips"></a>Practical tips</h2><ul>
+<li>Keep source code in one branch&#x2F;repo and static output in the pages branch&#x2F;repo.</li>
+<li>Commit source changes before deployment.</li>
+<li>If deploy fails by SSH, verify your key with <code>ssh -T git@github.com</code>.</li>
+</ul>
+<hr>
+<p>If this guide helps, feel free to star the project and share your setup.</p>
+
+  </div>
+</article>
+
+
+
+                        
+                          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/about/">About</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="https://github.com/cuipointer">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview"><span class="toc-number">1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Prepare-environment"><span class="toc-number">2.</span> <span class="toc-text">1) Prepare environment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Initialize-Hexo-project"><span class="toc-number">3.</span> <span class="toc-text">2) Initialize Hexo project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Install-and-configure-Cactus"><span class="toc-number">4.</span> <span class="toc-text">3) Install and configure Cactus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Configure-deployment"><span class="toc-number">5.</span> <span class="toc-text">4) Configure deployment</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Write-and-preview"><span class="toc-number">6.</span> <span class="toc-text">5) Write and preview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Build-and-deploy"><span class="toc-number">7.</span> <span class="toc-text">6) Build and deploy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Practical-tips"><span class="toc-number">8.</span> <span class="toc-text">Practical tips</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&text=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&title=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&is_video=false&description=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Complete Guide: Build a Blog with Hexo + GitHub Pages&body=Check out this article: https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&title=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&title=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&title=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&title=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&name=Complete Guide: Build a Blog with Hexo + GitHub Pages&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cuipointer.github.io/2026/03/05/en/hexo-github-pages-complete-guide/&t=Complete Guide: Build a Blog with Hexo + GitHub Pages"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+                            
+                              <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2026
+    Cuihan
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/about/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="https://github.com/cuipointer">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+              </div>
+              <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+                <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+      </body>
+
+      </html>

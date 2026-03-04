@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang=zh>
-<head>
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="从零开始搭建基于 Hexo + GitHub Pages + Cactus 主题的个人博客完整指南">
+
+  <html lang=&#34;zh-CN&#34;>
+    <head>
+  <!-- so meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+  <meta name="description" content="从零开始搭建基于 Hexo + GitHub Pages + Cactus 主题的个人博客完整指南">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo + GitHub Pages 博客搭建完整教程">
 <meta property="og:url" content="https://cuipointer.github.io/2026/03/04/Hexo-GitHub-Pages-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%AE%8C%E6%95%B4%E6%95%99%E7%A8%8B/index.html">
@@ -22,73 +23,74 @@
 <meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary">
     
-    
       
         
-          <link rel="shortcut icon" href="/images/favicon.ico">
-        
-      
-      
-        
-          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        
-      
-    
-    <!-- title -->
-    <title>Hexo + GitHub Pages 博客搭建完整教程</title>
-    <!-- async scripts -->
-    <!-- Google Analytics -->
+          
+                    <link rel="shortcut icon" href="/images/favicon.ico">
+                    
+                      
+                        
+                          
+                                    <link rel="icon" type="image/png" href="/images/favicon-192x192.png"
+                                      sizes="192x192">
+                                    
+                                      
+                                        
+                                          
+                                                    <link rel="apple-touch-icon" sizes="180x180"
+                                                      href="/images/apple-touch-icon.png">
+                                                    
+                                                      
+                                                        
+                                                          <!-- title -->
+                                                          <title>
+                                                            Hexo + GitHub Pages 博客搭建完整教程
+                                                          </title>
+                                                          <!-- async scripts -->
+                                                          <!-- Google Analytics -->
 
 
-    <!-- Umami Analytics -->
+                                                            <!-- Umami Analytics -->
 
 
-    <!-- styles -->
-    <script>
-      (function () {
-        var theme = 'white';
-        try {
-          var saved = localStorage.getItem('cactus-theme');
-          if (saved === 'dark' || saved === 'white') {
-            theme = saved;
-          }
-        } catch (error) {}
-        document.documentElement.setAttribute('data-theme', theme);
-      })();
-    </script>
-    <link
-      id="theme-style"
-      rel="stylesheet"
-      href="/css/style-white.css"
-      data-white="/css/style-white.css"
-      data-dark="/css/style-dark.css"
-    />
-    <script>
-      (function () {
-        var theme = document.documentElement.getAttribute('data-theme') || 'white';
-        var themeStyle = document.getElementById('theme-style');
-        if (themeStyle && theme === 'dark') {
-          themeStyle.href = themeStyle.getAttribute('data-dark');
-        }
-      })();
-    </script>
-    <!-- persian styles -->
-    
-    <!-- rss -->
-    
-    
-	<!-- mathjax -->
-	
+                                                              <!-- styles -->
+                                                              <script>
+                                                                (function () {
+                                                                  var theme = 'white';
+                                                                  try {
+                                                                    var saved = localStorage.getItem('cactus-theme');
+                                                                    if (saved === 'dark' || saved === 'white') {
+                                                                      theme = saved;
+                                                                    }
+                                                                  } catch (error) { }
+                                                                  document.documentElement.setAttribute('data-theme', theme);
+                                                                })();
+                                                              </script>
+                                                              <link id="theme-style" rel="stylesheet"
+                                                                href="/css/style-white.css"
+                                                                data-white="/css/style-white.css"
+                                                                data-dark="/css/style-dark.css" />
+                                                              <script>
+                                                                (function () {
+                                                                  var theme = document.documentElement.getAttribute('data-theme') || 'white';
+                                                                  var themeStyle = document.getElementById('theme-style');
+                                                                  if (themeStyle && theme === 'dark') {
+                                                                    themeStyle.href = themeStyle.getAttribute('data-dark');
+                                                                  }
+                                                                })();
+                                                              </script>
+                                                              <!-- persian styles -->
+                                                              
+                                                                    <!-- rss -->
+                                                                    
+                                                                          
+                                                                              <!-- mathjax -->
+                                                                              
 <meta name="generator" content="Hexo 8.1.1"></head>
 
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
+      <body class="max-width mx-auto px3 ltr">
+        
+          <div id="header-post">
   <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
@@ -147,10 +149,10 @@
   </span>
 </div>
 
-    
-    <div class="content index py4 ">
-        
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+            
+              <div class="content index py4 ">
+                
+                      <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
@@ -343,8 +345,8 @@
 
 
 
-        
-          <div id="footer-post-container">
+                        
+                          <div id="footer-post-container">
   <div id="footer-post">
 
     <div id="nav-footer" style="display: none">
@@ -397,8 +399,8 @@
   </div>
 </div>
 
-        
-        <footer id="footer">
+                            
+                              <footer id="footer">
   <div class="footer-left">
     Copyright &copy;
     
@@ -423,15 +425,15 @@
   </div>
 </footer>
 
-    </div>
-    <!-- styles -->
+              </div>
+              <!-- styles -->
 
 
 
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
 
 
-    <!-- jquery -->
+                <!-- jquery -->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
 
@@ -476,5 +478,6 @@
 
 <!-- utterances Comments -->
 
-</body>
-</html>
+      </body>
+
+      </html>

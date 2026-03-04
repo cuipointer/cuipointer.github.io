@@ -653,6 +653,9 @@ body {
   border-color: #2bbc8a;
   vertical-align: middle;
 }
+#header #nav ul li.language-toggle-item {
+  border-right: 0;
+}
 #header #nav ul li.theme-toggle-item {
   border-right: 0;
 }
