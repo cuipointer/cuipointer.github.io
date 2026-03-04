@@ -106,6 +106,6 @@ theme: cactus
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: git@github.com:cuipointer/cuihan.git
-  branch: gh-pages
+  repo: git@github.com:cuipointer/cuipointer.github.io.git
+  branch: main
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
