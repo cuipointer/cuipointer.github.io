@@ -109,5 +109,5 @@ theme: cactus
 deploy:
   type: git
   repo: git@github.com:cuipointer/cuipointer.github.io.git
-  branch: main
+  branch: pages
   message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}"
